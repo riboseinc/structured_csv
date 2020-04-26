@@ -55,15 +55,47 @@ foo:
     boo:
 ----
 
+A typical YAML output is like:
+
+[source,yaml]
+----
+---
+metadata:
+  locale:
+    bar:
+      en: beef
+      fr: boeuf
+      jp: 牛肉
+data:
+  foo:
+    bar:
+    ...
+----
+
+
+
 A sample METADATA section looks like this table:
 
 [cols,"a,a"]
 |===
 |METADATA |
-|foo.bar.en | beef
-|foo.bar.fr | boeuf
-|foo.bar.jp | 牛肉
+|locale.bar.en | beef
+|locale.bar.fr | boeuf
+|locale.bar.jp | 牛肉
 |===
+
+And generates this YAML:
+
+[source,yaml]
+----
+---
+metadata:
+  locale:
+    bar:
+      en: beef
+      fr: boeuf
+      jp: 牛肉
+----
 
 
 The `DATA` section has values organized in a table form. The first row is the header row.
@@ -77,7 +109,7 @@ A sample DATA section looks like this table:
 |DATA | | |
 |foo.bar.en | foo.bar.fr | foo.bar.jp | description
 |beef | boeuf | 牛肉 | Yummy!
-|pork | porc | 豚肉 |
+|pork | porc | 豚肉 | Delicious!
 |===
 
 By default, this table generates this YAML format:
@@ -110,7 +142,7 @@ In cases where there is no DATA key, you have to specify the `type=array` to gen
 |DATA | type=array | |
 |foo.bar.en | foo.bar.fr | foo.bar.jp | description
 |beef | boeuf | 牛肉 | Yummy!
-|pork | porc | 豚肉 |
+|pork | porc | 豚肉 | Delicious!
 |===
 
 [source,yaml]
@@ -163,3 +195,11 @@ data:
     availability: 10
   ...
 ----
+
+
+
+
+== Examples
+
+The `samples/` folder contains a number of complex examples.
+
