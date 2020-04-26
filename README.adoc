@@ -1,0 +1,165 @@
+= csv2yaml Ruby scripts
+
+== Purpose
+
+The `structured_csv_to_yaml.rb` script converts a "`Structured CSV`" file into a YAML file.
+
+When you have data of a yet-undefined data structure, it is useful to manage
+them inside a CSV file which can be viewed and edited by a CSV editor,
+such as Excel.
+
+This is extremely useful in developing a normalized structure for such data,
+as you can ensure that the existing data can be normalized according to a
+defined structure.
+
+Ultimately, the data is to be meant to exported to a YAML file.
+
+This script supports UTF-8 CSV files.
+
+NOTE: This was originally developed to create over 50 normalized data models for ITU Operational Bulletin data. See https://github.com/ituob/ for more details.
+
+
+== Usage
+
+[source,sh]
+----
+$ exe/structured_csv_to_yaml.rb [input-file.csv]
+----
+
+Where,
+
+`input-file.csv`:: is the input CSV file, the output will be named as `input-file.yaml`.
+
+
+== Details
+
+A Structured CSV file has these properties:
+
+Two structured sections. A section is defined by the first column on an otherwise empty row that is either the first row or a row preceded by an empty row. Two section types are allowed: `METADATA` and `DATA`.
+
+The `METADATA` section has values organized like key-value pairs:
+
+* Column 1 is the name of key
+* Column 2 is the value
+
+The `key` can be a normal string or namespaced:
+
+* `foobar`, this maps to the YAML key `foobar:`
+
+* `foo.bar.boo`, this maps to the YAML structure: +
++
+[source,yaml]
+----
+foo:
+  bar:
+    boo:
+----
+
+A sample METADATA section looks like this table:
+
+[cols,"a,a"]
+|===
+|METADATA |
+|foo.bar.en | beef
+|foo.bar.fr | boeuf
+|foo.bar.jp | 牛肉
+|===
+
+
+The `DATA` section has values organized in a table form. The first row is the header row.
+The first column is assumed to be the key.
+
+
+A sample DATA section looks like this table:
+
+[cols,"a,a,a,a"]
+|===
+|DATA | | |
+|foo.bar.en | foo.bar.fr | foo.bar.jp | description
+|beef | boeuf | 牛肉 | Yummy!
+|pork | porc | 豚肉 |
+|===
+
+By default, this table generates this YAML format:
+
+[source,yaml]
+----
+---
+data:
+  beef:
+    foo:
+      bar:
+        en: beef
+        fr: boeuf
+        jp: 牛肉
+    description: Yummy!
+  pork:
+    foo:
+      bar:
+        en: pork
+        fr: porc
+        jp: 豚肉
+    description: Delicious!
+  ...
+----
+
+In cases where there is no DATA key, you have to specify the `type=array` to generate an array:
+
+[cols,"a,a,a,a"]
+|===
+|DATA | type=array | |
+|foo.bar.en | foo.bar.fr | foo.bar.jp | description
+|beef | boeuf | 牛肉 | Yummy!
+|pork | porc | 豚肉 |
+|===
+
+[source,yaml]
+----
+---
+data:
+  - foo:
+      bar:
+        en: beef
+        fr: boeuf
+        jp: 牛肉
+    description: Yummy!
+  - foo:
+      bar:
+        en: pork
+        fr: porc
+        jp: 豚肉
+    description: Delicious!
+  ...
+----
+
+
+You are also allowed to specify the data types of columns. The types of `string`, `boolean` and `integer` are supported.
+
+[cols,"a,a,a,a"]
+|===
+|DATA | | |
+|foo.bar.en[string] | foo.bar.fr[string] | yummy[boolean] | availability[integer]
+|beef | boeuf | TRUE | 3
+|pork | porc | FALSE | 10
+|===
+
+[source,yaml]
+----
+---
+data:
+  beef:
+    foo:
+      bar:
+        en: beef
+        fr: boeuf
+    yummy: true
+    availability: 3
+  pork:
+    foo:
+      bar:
+        en: pork
+        fr: porc
+    yummy: false
+    availability: 10
+  ...
+----
