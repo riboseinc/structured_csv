@@ -24,4 +24,4 @@ outfile = Pathname.new(csvdir).sub_ext(".csv").to_s
 
 StructuredCsv::CsvJoin.convert(csvdir, outfile)
 
-# puts CsvJoin.convert(csvdir)
+# puts StructuredCsv::CsvJoin.convert(csvdir)

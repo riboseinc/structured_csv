@@ -17,7 +17,7 @@ module StructuredCsv
           next
         end
 
-        if !first_row.nil? && is_row_empty?(row)
+        if !first_row.nil? && Csv2Yaml.is_row_empty?(row)
           warn "found last"
           last_row = index
           break
@@ -79,7 +79,7 @@ module StructuredCsv
         end
       end
 
-      csv
+      csv.close
     end
   end
 end
