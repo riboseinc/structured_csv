@@ -8,11 +8,11 @@ module StructuredCsv
       last_row = -1
       data_meta = {}
 
-      puts "section_name #{section_name}"
+      warn "section_name #{section_name}"
 
       csv.each_with_index do |row, index|
         if first_row.nil? && is_start_of_portion?(row, section_name)
-          # puts"found first"
+          # warn"found first"
 
           if row[1] && !row[1].empty?
             row[1].split(";").each do |opt|
@@ -26,13 +26,13 @@ module StructuredCsv
         end
 
         if !first_row.nil? && is_row_empty?(row)
-          # puts "found last"
+          # warn "found last"
           last_row = index
           break
         end
       end
 
-      # puts "first #{first_row}  last #{last_row}"
+      # warn "first #{first_row}  last #{last_row}"
       {
         first_row: first_row,
         last_row: last_row,
@@ -62,7 +62,7 @@ module StructuredCsv
       field_name = ""
       field_type = CAST_DEFAULT_TYPE
 
-      # puts header_field
+      # warn header_field
       arr = header_field.match(/\A(.*)\[(.*)\]\Z/)
 
       if arr.nil?
@@ -99,7 +99,7 @@ module StructuredCsv
       when /^array\{(.*)\}/
         val_type = Regexp.last_match[1] || CAST_DEFAULT_TYPE
         value.split(";").map do |v|
-          # puts "cast type as #{v}, #{val_type.to_s}"
+          # warn "cast type as #{v}, #{val_type.to_s}"
           cast_type(v, val_type.to_s)
         end
       else
@@ -122,7 +122,7 @@ module StructuredCsv
         hash[key] = value
       end
 
-      # puts "=============================METADATA================="
+      # warn "=============================METADATA================="
       # pp hash
       normalize_namespaces(hash)
     end
@@ -143,7 +143,7 @@ module StructuredCsv
       rows.each_with_index do |row, index|
         # Assume the first column is always the key
         if index == 0
-          # puts "row #{row}"
+          # warn "row #{row}"
           header = row.map do |field|
             split_header_key_type(field) unless field.nil?
           end.compact
@@ -154,7 +154,7 @@ module StructuredCsv
 
           next
         end
-        # puts "header #{header.inspect}"
+        # warn "header #{header.inspect}"
 
         # Skip all the empty rows
         next if is_row_empty?(row)
@@ -185,7 +185,7 @@ module StructuredCsv
         case data_type
         when "hash"
           unless base_structure[k].nil?
-            puts "[WARNING] there is already data inside key [#{k}] -- maybe you should set type=array?"
+            warn "[WARNING] there is already data inside key [#{k}] -- maybe you should set type=array?"
           end
           base_structure[k] = normalize_namespaces(d)
         when "array"
@@ -208,9 +208,9 @@ module StructuredCsv
       metadata_section = get_portion(raw_data, "METADATA")
       data_section = get_portion(raw_data, "DATA")
 
-      # puts '----------'
+      # warn '----------'
       # pp data_section[:rows]
-      # puts '----------'
+      # warn '----------'
 
       {
         "metadata" => parse_metadata(metadata_section[:rows]),
@@ -226,13 +226,13 @@ module StructuredCsv
       new_hash = {}
 
       hash.each_pair do |k, v|
-        # puts"k (#{k}) v (#{v})"
+        # warn"k (#{k}) v (#{v})"
         key_components = k.to_s.split(".")
 
         level = new_hash
         last_component = key_components.pop
         key_components.each do |component|
-          # puts"c (#{component})"
+          # warn"c (#{component})"
           level[component] ||= {}
           level = level[component]
         end

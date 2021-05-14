@@ -8,28 +8,28 @@ module StructuredCsv
       first_row = nil
       last_row = -1
 
-      puts "section_name #{section_name}"
+      warn "section_name #{section_name}"
 
       csv.each_with_index do |row, index|
-        if first_row.nil? && is_start_of_portion?(row, section_name)
-          puts "found first"
+        if first_row.nil? && Csv2Yaml.is_start_of_portion?(row, section_name)
+          warn "found first"
           first_row = index + 1
           next
         end
 
         if !first_row.nil? && is_row_empty?(row)
-          puts "found last"
+          warn "found last"
           last_row = index
           break
         end
       end
 
-      puts "first #{first_row}  last #{last_row}"
+      warn "first #{first_row}  last #{last_row}"
       csv[first_row..last_row]
     end
 
     def self.load_csv(csvfile)
-      # puts csvfile
+      # warn csvfile
 
       content = File.read(csvfile, encoding: "bom|utf-8").scrub
       CSV.parse(content, liberal_parsing: true, encoding: "UTF-8")
