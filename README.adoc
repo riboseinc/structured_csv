@@ -1,4 +1,4 @@
-= csv2yaml Ruby scripts
+= Process Structured CSV files (`structured_csv`)
 
 == Purpose
 
