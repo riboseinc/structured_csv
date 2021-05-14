@@ -53,11 +53,6 @@ module StructuredCsv
       end.all?(&:nil?)
     end
 
-    def self.get_csv(csv_filename)
-      content = File.read(csv_filename, encoding: "bom|utf-8")
-      CSV.parse(content, liberal_parsing: true, encoding: "UTF-8")
-    end
-
     def self.split_header_key_type(header_field)
       field_name = ""
       field_type = CAST_DEFAULT_TYPE
@@ -203,7 +198,7 @@ module StructuredCsv
     end
 
     def self.convert(csv_filename)
-      raw_data = get_csv(csv_filename)
+      raw_data = StructuredCsv::Common.load_csv(csv_filename)
 
       metadata_section = get_portion(raw_data, "METADATA")
       data_section = get_portion(raw_data, "DATA")

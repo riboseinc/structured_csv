@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
 require_relative "structured_csv/version"
-
-module StructuredCsv
-end
+require_relative "structured_csv/common"
+require_relative "structured_csv/csv2yaml"
+require_relative "structured_csv/csv_join"

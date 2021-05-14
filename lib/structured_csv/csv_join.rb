@@ -28,13 +28,6 @@ module StructuredCsv
       csv[first_row..last_row]
     end
 
-    def self.load_csv(csvfile)
-      # warn csvfile
-
-      content = File.read(csvfile, encoding: "bom|utf-8").scrub
-      CSV.parse(content, liberal_parsing: true, encoding: "UTF-8")
-    end
-
     def self.convert(csvdir, outfile)
       raise "first argument must be a directory!" unless File.directory?(csvdir)
 
@@ -48,7 +41,7 @@ module StructuredCsv
       csvheader = ""
 
       csvfiles.each do |csvfile|
-        content = load_csv(csvfile)
+        content = StructuredCsv::Common.load_csv(csvfile)
 
         csvheader = content.shift
         if header.empty?
