@@ -31,4 +31,16 @@ Gem::Specification.new do |spec|
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
+
+  spec.add_dependency "csv", "~> 3.1"
+  spec.add_dependency "pathname", "~> 0.1"
+  spec.add_dependency "yaml", "~> 0.1"
+
+  spec.add_development_dependency "byebug", "~> 11.1"
+  spec.add_development_dependency "guard", "~> 2.17"
+  spec.add_development_dependency "guard-rspec", "~> 4.7"
+  spec.add_development_dependency "rake", "~> 13.0"
+  spec.add_development_dependency "rspec", "~> 3.10"
+  spec.add_development_dependency "rubocop", "~> 1.14.0"
+  spec.add_development_dependency "simplecov", "~> 0.21"
 end
