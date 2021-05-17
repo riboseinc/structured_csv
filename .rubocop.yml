@@ -2,7 +2,8 @@ inherit_from:
   - https://raw.githubusercontent.com/riboseinc/oss-guides/master/ci/rubocop.yml
 
 # Override
-require: []
+require:
+  - rubocop-performance
 
 # local repo-specific modifications
 AllCops:
