@@ -82,9 +82,10 @@ module StructuredCsv
 
       case type
       when "boolean"
-        if value == "true"
+        case value
+        when /\A *true *\z/i
           true
-        elsif value == "false"
+        when /\A *false *\z/i
           false
         end
       when "integer"

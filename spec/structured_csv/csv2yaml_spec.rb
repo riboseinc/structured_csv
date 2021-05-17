@@ -243,7 +243,7 @@ RSpec.describe StructuredCsv::Csv2Yaml do
         },
         {
           type_in_string: "boolean",
-          expected:       nil
+          expected:       true
         },
         {
           type_in_string: "asdf",
@@ -274,7 +274,7 @@ RSpec.describe StructuredCsv::Csv2Yaml do
         },
         {
           type_in_string: "boolean",
-          expected:       nil
+          expected:       false
         },
         {
           type_in_string: "asdf",
@@ -447,7 +447,7 @@ RSpec.describe StructuredCsv::Csv2Yaml do
         },
         {
           type_in_string: "array{boolean}",
-          expected:       [nil, nil, nil, nil, true, false]
+          expected:       [nil, nil, true, false, true, false]
         },
         {
           type_in_string: "array{integer}",
@@ -704,6 +704,9 @@ RSpec.describe StructuredCsv::Csv2Yaml do
                   "en" => "The telex service is no longer provided.",
                   "es" => "El servicio télex está suprimido",
                   "fr" => "Le service télex n'est plus assuré."
+                },
+                "restrictions"    => {
+                  "telex_not_provided" => true
                 }
               }
             }
