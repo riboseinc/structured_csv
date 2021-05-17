@@ -1,5 +1,8 @@
 = Process Structured CSV files (`structured_csv`)
 
+image:https://badge.fury.io/rb/structured_csv.svg["Gem Version", link="https://badge.fury.io/rb/structured_csv"]
+image:https://github.com/riboseinc/structured_csv/actions/workflows/main.yml/badge.svg["Tests", link="https://github.com/riboseinc/structured_csv/actions/workflows/main.yml"]
+
 == Purpose
 
 The `structured_csv_to_yaml.rb` script converts a "`Structured CSV`" file into a YAML file.
@@ -202,4 +205,3 @@ data:
 == Examples
 
 The `samples/` folder contains a number of complex examples.
-
