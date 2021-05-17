@@ -1,6 +1,10 @@
 inherit_from:
   - https://raw.githubusercontent.com/riboseinc/oss-guides/master/ci/rubocop.yml
 
+# Override
+require:
+  - rubocop-performance
+
 # local repo-specific modifications
 AllCops:
   TargetRubyVersion: 2.4
