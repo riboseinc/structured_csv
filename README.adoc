@@ -5,7 +5,7 @@ image:https://github.com/riboseinc/structured_csv/actions/workflows/main.yml/bad
 
 == Purpose
 
-The `structured_csv_to_yaml.rb` script converts a "`Structured CSV`" file into a YAML file.
+The `structured_csv_to_yaml` script converts a "`Structured CSV`" file into a YAML file.
 
 When you have data of a yet-undefined data structure, it is useful to manage
 them inside a CSV file which can be viewed and edited by a CSV editor,
@@ -22,11 +22,35 @@ This script supports UTF-8 CSV files.
 NOTE: This was originally developed to create over 50 normalized data models for ITU Operational Bulletin data. See https://github.com/ituob/ for more details.
 
 
+== Installation
+
+Add this line to your application's `Gemfile`:
+
+[source,ruby]
+----
+gem 'structured_csv'
+----
+
+and then run:
+
+[source,sh]
+----
+bundle install
+----
+
+Or install it without a `Gemfile`:
+
+[source,sh]
+----
+gem install structured_csv
+----
+
+
 == Usage
 
 [source,sh]
 ----
-$ exe/structured_csv_to_yaml.rb [input-file.csv]
+$ structured_csv_to_yaml [input-file.csv]
 ----
 
 Where,
