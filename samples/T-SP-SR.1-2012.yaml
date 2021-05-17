@@ -18,6 +18,8 @@ data:
       fr: Andorre
       en: Andorra
       es: Andorra
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telex service is no longer provided.
       es: El servicio télex está suprimido
@@ -27,6 +29,12 @@ data:
       fr: Antigua-et-Barbuda
       en: Antigua and Barbuda
       es: Antigua y Barbuda
+    restrictions:
+      telex_not_provided: true
+      no_collect_calls:
+        mobile: true
+        payphone: true
+        audiotex: true
     notes:
       en: The telegram service is no longer provided. Collect calls to mobile, payphone
         and audiotex numbers are not accepted
@@ -66,6 +74,9 @@ data:
       fr: Aruba
       en: Aruba
       es: Aruba
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -77,6 +88,9 @@ data:
       fr: Australie
       en: Australia
       es: Australia
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -88,6 +102,8 @@ data:
       fr: Autriche
       en: Austria
       es: Austria
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telex service is no longer provided.
       es: El servicio télex está suprimido
@@ -97,6 +113,8 @@ data:
       fr: Bangladesh
       en: Bangladesh
       es: Bangladesh
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telex service is no longer provided.
       es: El servicio télex está suprimido
@@ -106,6 +124,9 @@ data:
       fr: Barbade
       en: Barbados
       es: Barbados
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -131,6 +152,9 @@ data:
       fr: Belize
       en: Belize
       es: Belice
+    restrictions:
+      no_collect_calls:
+        payphone: true
     notes:
       en: Collect calls to mobile numbers or payphones are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -142,6 +166,8 @@ data:
       fr: Bosnie-Herzégovine
       en: Bosnia and Herzegovina
       es: Bosnia y Herzegovina
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telex service is no longer provided.
       es: El servicio télex está suprimido
@@ -151,6 +177,9 @@ data:
       fr: Bulgarie
       en: Bulgaria
       es: Bulgaria
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
     notes:
       en: Collect telephone calls and credit card telephone calls are accepted in
         Bulgaria only with those countries whose administrations have confirmed their
@@ -169,6 +198,9 @@ data:
       fr: Cayman (Iles)
       en: Cayman (Islands)
       es: Caimán (Islas)
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -180,6 +212,9 @@ data:
       fr: Colombie
       en: Colombia
       es: Colombia
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -191,6 +226,8 @@ data:
       fr: Cook (Iles)
       en: Cook Islands
       es: Cook (Islas)
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telex service is no longer provided.
       es: El servicio télex está suprimido
@@ -200,6 +237,12 @@ data:
       fr: Curaçao, Sint Maarten, Bonaire, Saint Eustatius et Saba
       en: Curaçao, Sint Maarten, Bonaire, Sint Eustatius and Saba
       es: Curaçao, Sint Maarten, Bonaire, San Eustatius y Saba
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
+      no_collect_calls:
+        incoming: true
+        outgoing: true
     notes:
       en: Collect calls for both outgoing and incoming are not accepted. The telegram
         service is no longer provided. The telex service is no longer provided.
@@ -213,6 +256,9 @@ data:
       fr: Chypre
       en: Cyprus
       es: Chipre
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: CYTA no longer route nor accept telephone traffic via transit carriers.
         Telecom operators are requested to switch to the hubbing method for routing
@@ -226,16 +272,17 @@ data:
         priés de bien vouloir adopter la méthode de concentration (hubbing) pour le
         routage de leur trafic à destination de la CYTA. Les communications payables
         à l'arrivée à destination de numéros mobiles ne sont pas acceptées.
-  Tchèque (Rép:
-    ")":
-      geographic_area:
-        fr: Tchèque (Rép.)
-        en: Czech Rep.
-        es: Checa (Rep.)
-      notes:
-        en: The telex service is no longer provided.
-        es: El servicio télex está suprimido
-        fr: Le service télex n'est plus assuré.
+  Tchèque (Rép.):
+    geographic_area:
+      fr: Tchèque (Rép.)
+      en: Czech Rep.
+      es: Checa (Rep.)
+    restrictions:
+      telex_not_provided: true
+    notes:
+      en: The telex service is no longer provided.
+      es: El servicio télex está suprimido
+      fr: Le service télex n'est plus assuré.
   Danemark:
     geographic_area:
       fr: Danemark
@@ -250,6 +297,9 @@ data:
       fr: Dominique
       en: Dominica
       es: Dominica
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -261,6 +311,9 @@ data:
       fr: Féroé (Iles)
       en: Faroe (Island)
       es: Faroe (Islas)
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
     notes:
       en: The telex service is no longer provided. The telegram service is no longer
         provided
@@ -272,6 +325,11 @@ data:
       fr: Fidji
       en: Fiji
       es: Fiji
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
+      no_collect_calls:
+        mobile: true
     notes:
       en: The telex service is no longer provided. The telegram service is no longer
         provided. Collect calls to mobile numbers are not accepted
@@ -310,6 +368,10 @@ data:
       fr: Gibraltar
       en: Gibraltar
       es: Gibraltar
+    restrictions:
+      telegram_not_provided: true
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted. The telegram service is
         no longer provided
@@ -322,6 +384,8 @@ data:
       fr: Groenland
       en: Greenland
       es: Groenlandia
+    restrictions:
+      telegram_not_provided: true
     notes:
       en: The telegram service is no longer provided. Telephone calls requiring the
         dispatch of a messenger are no longer admitted.
@@ -334,6 +398,11 @@ data:
       fr: Guyana
       en: Guyana
       es: Guyana
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
+      no_collect_calls:
+        mobile: true
     notes:
       en: The telex service is no longer provided. The telegram service is no longer
         provided. Collect calls to mobile numbers are not accepted
@@ -348,6 +417,8 @@ data:
       fr: Haïti
       en: Haiti
       es: Haiti
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telex service is no longer provided.
       es: El servicio télex está suprimido
@@ -357,6 +428,9 @@ data:
       fr: Honduras
       en: Honduras
       es: Honduras
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -368,6 +442,8 @@ data:
       fr: Hong Kong, Chine
       en: Hong Kong, China
       es: Hong Kong, China
+    restrictions:
+      telegram_not_provided: true
     notes:
       en: The telegram service and CT2 service are no longer provided
       es: El servicio de telegramas y el servicio CT2 están suprimidos
@@ -377,6 +453,13 @@ data:
       fr: Hongrie
       en: Hungary
       es: Hungría
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
+      no_collect_calls:
+        mobile: true
+        incoming: true
+        outgoing: true
     notes:
       en: The telex service is no longer provided. The telegram service is no longer
         provided. Collect calls for both outgoing and incoming are not accepted
@@ -390,6 +473,12 @@ data:
       fr: Islande
       en: Iceland
       es: Islandia
+    restrictions:
+      telex_not_provided: true
+      no_collect_calls:
+        mobile: true
+        incoming: true
+        outgoing: true
     notes:
       en: The telex service is no longer provided. Collect calls for both outgoing
         and incoming are not accepted
@@ -402,6 +491,10 @@ data:
       fr: Indonésie
       en: Indonesia
       es: Indonesia
+    restrictions:
+      telegram_not_provided: true
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted. The telegram service is
         no longer provided. PT Indosat no longer route nor accept telephone traffic
@@ -423,6 +516,8 @@ data:
       fr: Irlande
       en: Ireland
       es: Irlanda
+    restrictions:
+      no_messenger_dispatch: true
     notes:
       en: Telephone calls requiring the dispatch of a messenger are no longer admitted.
       es: No se admiten llamadas telefónicas que requieran el envío de un mensajero
@@ -433,6 +528,8 @@ data:
       fr: Japon
       en: Japan
       es: Japón
+    restrictions:
+      no_messenger_dispatch: true
     notes:
       en: Telephone calls requiring the dispatch of a messenger are no longer admitted.
       es: No se admiten llamadas telefónicas que requieran el envío de un mensajero
@@ -477,6 +574,9 @@ data:
       fr: Luxembourg
       en: Luxembourg
       es: Luxemburgo
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
     notes:
       en: The telex service is no longer provided.. The telegram service is no longer
         provided. EPT announces cancellation of the operator service.
@@ -489,6 +589,8 @@ data:
       fr: Madagascar
       en: Madagascar
       es: Madagascar
+    restrictions:
+      telegram_not_provided: true
     notes:
       en: The telegram service is no longer provided
       es: El servicio de telegramas está suprimido
@@ -498,6 +600,8 @@ data:
       fr: Malaisie
       en: Malaysia
       es: Malasia
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telex service is no longer provided.
       es: El servicio télex está suprimido
@@ -507,6 +611,9 @@ data:
       fr: Malawi
       en: Malawi
       es: Malawi
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -518,6 +625,10 @@ data:
       fr: Maldives
       en: Maldives
       es: Maldivas
+    restrictions:
+      no_collect_calls:
+        incoming: true
+        outgoing: true
     notes:
       en: Collect calls for both outgoing and incoming are not accepted
       es: No se aceptan llamadas de cobro revertido entrantes ni salientes
@@ -528,6 +639,9 @@ data:
       fr: Malte
       en: Malta
       es: Malta
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
     notes:
       en: The telegram service is no longer provided. The telex service is no longer
         provided.
@@ -551,6 +665,10 @@ data:
       fr: Maroc
       en: Morocco
       es: Marruecos
+    restrictions:
+      no_collect_calls:
+        mobile: true
+        payphone: true
     notes:
       en: Collect calls to mobile numbers and payphones are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -562,6 +680,8 @@ data:
       fr: Mozambique
       en: Mozambique
       es: Mozambique
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telex service is no longer provided.
       es: El servicio télex está suprimido
@@ -571,6 +691,9 @@ data:
       fr: Namibie
       en: Namibia
       es: Namibia
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -582,6 +705,9 @@ data:
       fr: Pays-Bas
       en: Netherlands
       es: Países Bajos
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -593,6 +719,12 @@ data:
       fr: Nouvelle-Calédonie
       en: New Caledonia
       es: Nueva Caledonia
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
+      no_collect_calls:
+        incoming: true
+        outgoing: true
     notes:
       en: The telex service is no longer provided. The telegram service is no longer
         provided. Collect calls for both outgoing and incoming are not accepted
@@ -606,6 +738,8 @@ data:
       fr: Nouvelle-Zélande
       en: New Zealand
       es: Nueva Zelandia
+    restrictions:
+      telegram_not_provided: true
     notes:
       en: The telegram service is no longer provided
       es: El servicio de telegramas está suprimido
@@ -650,6 +784,9 @@ data:
       fr: Pakistan
       en: Pakistan
       es: Pakistán
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
     notes:
       en: The telecommunication service with Israel is suspended. The telex service
         is no longer provided. The telegram service is no longer provided.
@@ -662,6 +799,9 @@ data:
       fr: Panama
       en: Panama
       es: Panamá
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -673,6 +813,10 @@ data:
       fr: Papouasie-Nouvelle-Guinée
       en: Papua New Guinea
       es: Papua Nueva Guinea
+    restrictions:
+      telex_not_provided: true
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted. The telex service is no
         longer provided.
@@ -685,6 +829,10 @@ data:
       fr: Pérou
       en: Peru
       es: Perú
+    restrictions:
+      no_collect_calls:
+        incoming: true
+        outgoing: true
     notes:
       en: Collect calls for both outgoing and incoming are not accepted
       es: No se aceptan llamadas de cobro revertido entrantes ni salientes
@@ -695,6 +843,9 @@ data:
       fr: Pologne
       en: Poland
       es: Polonía
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
     notes:
       en: The telegram service is no longer provided. The telex service is no longer
         provided.
@@ -724,6 +875,9 @@ data:
       fr: Sainte-Hélène, Ascension et Tristan da Cunha
       en: Saint Helena, Ascension and Tristan da Cunha
       es: Santa Elena, Ascensión y Tristan da Cunha
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
     notes:
       en: The telex service is no longer provided. The telegram service is no longer
         provided
@@ -735,6 +889,9 @@ data:
       fr: Sainte-Lucie
       en: Saint Lucia
       es: Santa Lucía
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -746,6 +903,9 @@ data:
       fr: Saint-Vincent-et-les-Grenadines
       en: Saint Vincent and the Grenadines
       es: San Vicente y las Granadinas
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -757,6 +917,8 @@ data:
       fr: Samoa
       en: Samoa
       es: Samoa
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telex service is no longer provided.
       es: El servicio télex está suprimido
@@ -783,6 +945,8 @@ data:
       fr: Sao Tomé-et-Principe
       en: Sao Tome and Principe
       es: Santo Tomé y Príncipe
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telex service is no longer provided.
       es: El servicio télex está suprimido
@@ -792,6 +956,10 @@ data:
       fr: Arabie saoudite
       en: Saudi Arabia
       es: Arabia Saudita
+    restrictions:
+      no_collect_calls:
+        incoming: true
+        outgoing: true
     notes:
       en: Collect calls for both outgoing and incoming are not accepted
       es: No se aceptan llamadas de cobro revertido entrantes ni salientes
@@ -802,6 +970,10 @@ data:
       fr: Serbie
       en: Serbia
       es: Serbia
+    restrictions:
+      telex_not_provided: true
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted. The telex service is no
         longer provided. The Operator-Assisted Call Service for semi-automatic calls
@@ -818,6 +990,9 @@ data:
       fr: Seychelles
       en: Seychelles
       es: Seychelles
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -829,6 +1004,8 @@ data:
       fr: Singapour
       en: Singapore
       es: Singapur
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telegram service is no longer provided. Singapore Telecommunications
         Ltd ("SingTel"), Singapore, announces that incoming international operator-assisted
@@ -860,6 +1037,12 @@ data:
       fr: Slovaquie
       en: Slovakia
       es: Eslovaquia
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
+      no_collect_calls:
+        incoming: true
+        outgoing: true
     notes:
       en: Collect calls for both outgoing and incoming are not accepted. The telex
         service is no longer provided. The telegram service is no longer provided.
@@ -880,30 +1063,34 @@ data:
         especial TLXx (entrega de télex)
       fr: Les télégrammes avec le service spécial TLXx (remise par télex) ne sont
         plus admis à destination et en provenance de la Slovénie.
-  Sudafricaine (Rép:
-    ")":
-      geographic_area:
-        fr: Sudafricaine (Rép.)
-        en: South Africa
-        es: Sudafricana (Rep.)
-      notes:
-        en: Telkom SA Ltd., Pretoria, announces that Letter telegrams (LT), Government
-          letter telegrams (LTF) and telegrams with the special service URGENT (Urgent
-          transmission and delivery) and LX (De luxe form) are not accepted to and
-          from South Africa.
-        es: Telkom SA Ltd., Pretoria, anuncia que no se admiten con destino u origen
-          en la República Sudafricana los telegramas-carta (LT), los telegramas-carta
-          de Estado (LTF) ni los telegramas con servicio especial URGENT (transmisión
-          y entrega urgentes) y LX (formulario de lujo)
-        fr: Telkom SA Ltd., Pretoria, annonce que les télégrammes-lettres (LT), les
-          télégrammes-lettres d'Etat (LTF) et les télégrammes avec le service spécial
-          URGENT (transmission et remise urgentes) et LX (formule de luxe) ne sont
-          pas acceptés à destination et en provenance de la République sudafricaine.
+  Sudafricaine (Rép.):
+    geographic_area:
+      fr: Sudafricaine (Rép.)
+      en: South Africa
+      es: Sudafricana (Rep.)
+    notes:
+      en: Telkom SA Ltd., Pretoria, announces that Letter telegrams (LT), Government
+        letter telegrams (LTF) and telegrams with the special service URGENT (Urgent
+        transmission and delivery) and LX (De luxe form) are not accepted to and from
+        South Africa.
+      es: Telkom SA Ltd., Pretoria, anuncia que no se admiten con destino u origen
+        en la República Sudafricana los telegramas-carta (LT), los telegramas-carta
+        de Estado (LTF) ni los telegramas con servicio especial URGENT (transmisión
+        y entrega urgentes) y LX (formulario de lujo)
+      fr: Telkom SA Ltd., Pretoria, annonce que les télégrammes-lettres (LT), les
+        télégrammes-lettres d'Etat (LTF) et les télégrammes avec le service spécial
+        URGENT (transmission et remise urgentes) et LX (formule de luxe) ne sont pas
+        acceptés à destination et en provenance de la République sudafricaine.
   Sri Lanka:
     geographic_area:
       fr: Sri Lanka
       en: Sri Lanka
       es: Sri Lanka
+    restrictions:
+      no_collect_calls:
+        payphone: true
+        incoming: true
+        outgoing: true
     notes:
       en: No incoming calls are allowed for payphones in Sri Lanka
       es: No se autorizan llamadas efectuadas a teléfonos públicos
@@ -922,6 +1109,9 @@ data:
       fr: Suriname
       en: Suriname
       es: Suriname
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
     notes:
       en: The telegram service is no longer provided. The telex service is no longer
         provided.
@@ -933,6 +1123,10 @@ data:
       fr: Swaziland
       en: Swaziland
       es: Swazilandia
+    restrictions:
+      no_collect_calls:
+        mobile: true
+        virtual: true
     notes:
       en: Collect calls to mobile numbers and virtual telephony are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -968,6 +1162,8 @@ data:
       fr: Thaïlande
       en: Thailand
       es: Tailandia
+    restrictions:
+      telegram_not_provided: true
     notes:
       en: The telegram service is no longer provided
       es: El servicio de telegramas está suprimido
@@ -977,6 +1173,9 @@ data:
       fr: Tonga
       en: Tonga
       es: Tonga
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
     notes:
       en: The telegram service is no longer provided. The telex service is no longer
         provided.
@@ -988,6 +1187,12 @@ data:
       fr: Trinité-et-Tobago
       en: Trinidad and Tobago
       es: Trinidad y Tabago
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
+      no_collect_calls:
+        mobile: true
+        virtual: true
     notes:
       en: The telegram service is no longer provided. The telex service is no longer
         provided. Collect calls to mobile numbers and virtual telephony are not accepted
@@ -1016,6 +1221,9 @@ data:
       fr: Turques et Caïques (Iles)
       en: Turks and Caicos Islands
       es: Turquesas y Caicos (Islas)
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -1027,6 +1235,9 @@ data:
       fr: Emirats arabes unis
       en: United Arab Emirates
       es: Emiratos Árabes Unidos
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted. The telecommunication
         service with Israel is suspended
@@ -1039,6 +1250,9 @@ data:
       fr: Uruguay
       en: Uruguay
       es: Uruguay
+    restrictions:
+      no_collect_calls:
+        mobile: true
     notes:
       en: Collect calls to mobile numbers are not accepted
       es: No se aceptan llamadas de cobro revertido efectuadas a números de teléfonos
@@ -1050,6 +1264,12 @@ data:
       fr: Vanuatu
       en: Vanuatu
       es: Vanuatu
+    restrictions:
+      telex_not_provided: true
+      telegram_not_provided: true
+      no_collect_calls:
+        incoming: true
+        outgoing: true
     notes:
       en: The telex service is no longer provided. Collect calls for both outgoing
         and incoming are not accepted. The telegram service is no longer provided.
@@ -1063,6 +1283,8 @@ data:
       fr: Vatican
       en: Vatican
       es: Vaticano
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telex service is no longer provided.
       es: El servicio télex está suprimido
@@ -1072,6 +1294,8 @@ data:
       fr: Yémen
       en: Yemen
       es: Yemen
+    restrictions:
+      telex_not_provided: true
     notes:
       en: The telecommunication service with Israel is suspended. The telex service
         is no longer provided.
