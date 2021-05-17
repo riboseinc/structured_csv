@@ -1,13 +1,42 @@
-inherit_from:
-  - https://raw.githubusercontent.com/riboseinc/oss-guides/master/ci/rubocop.yml
+# inherit_from:
+#   - https://raw.githubusercontent.com/riboseinc/oss-guides/master/ci/rubocop.yml
 
 # Override
 require:
   - rubocop-performance
+  - rubocop-rspec
+  - rubocop-rake
 
 # local repo-specific modifications
 AllCops:
-  TargetRubyVersion: 3.1
+  TargetRubyVersion: 2.6
+
+Layout/DotPosition:
+  EnforcedStyle: leading
+
+# Layout/EmptyLinesAroundBlockBody:
+#   Enabled: false
+
+# # https://github.com/rubocop-hq/rubocop/issues/6259#issuecomment-420734217
+# Layout/ExtraSpacing:
+#   ForceEqualSignAlignment: true
+
+Layout/HashAlignment:
+  EnforcedColonStyle: table
+  EnforcedHashRocketStyle: table
+
+Layout/LineLength:
+  Max: 120
+
+Lint/PercentStringArray:
+  # AutoCorrect: false
+  Enabled: false
+
+Security/YAMLLoad:
+  AutoCorrect: false
+
+Style/ParenthesesAroundCondition:
+  AutoCorrect: false
 
 Style/StringLiterals:
   Enabled: true
@@ -17,5 +46,5 @@ Style/StringLiteralsInInterpolation:
   Enabled: true
   EnforcedStyle: double_quotes
 
-Layout/LineLength:
-  Max: 120
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
