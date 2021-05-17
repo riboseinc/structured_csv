@@ -1,6 +1,4 @@
 #!/usr/bin/env ruby
-# encoding: UTF-8
-
 # resolve bin path, ignoring symlinks
 require "pathname"
 bin_file = Pathname.new(__FILE__).realpath
@@ -12,12 +10,14 @@ $:.unshift File.expand_path("../../lib", bin_file)
 require "rubygems/specification"
 
 class Gem::Specification
-  def this; self; end
+  def this
+    self
+  end
 end
 
 require "structured_csv/csv_join"
 
-csvdir = ARGV.pop
+csvdir  = ARGV.pop
 outfile = Pathname.new(csvdir).sub_ext(".csv").to_s
 
 # puts outfile

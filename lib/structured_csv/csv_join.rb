@@ -6,7 +6,7 @@ module StructuredCsv
   module CsvJoin
     def self.join(csv, section_name)
       first_row = nil
-      last_row = -1
+      last_row  = -1
 
       warn "section_name #{section_name}"
 
@@ -17,11 +17,11 @@ module StructuredCsv
           next
         end
 
-        if !first_row.nil? && Csv2Yaml.is_row_empty?(row)
-          warn "found last"
-          last_row = index
-          break
-        end
+        next unless !first_row.nil? && Csv2Yaml.is_row_empty?(row)
+
+        warn "found last"
+        last_row = index
+        break
       end
 
       warn "first #{first_row}  last #{last_row}"
@@ -37,7 +37,7 @@ module StructuredCsv
       raise "directory must contain .csv files!" if csvfiles.empty?
 
       # Assume all files use the same header structure as the first CSV file
-      header = []
+      header    = []
       csvheader = ""
 
       csvfiles.each do |csvfile|

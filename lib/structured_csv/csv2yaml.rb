@@ -5,7 +5,7 @@ module StructuredCsv
   module Csv2Yaml
     def self.get_portion(csv, section_name)
       first_row = nil
-      last_row = -1
+      last_row  = -1
       data_meta = {}
 
       warn "section_name #{section_name}"
@@ -16,7 +16,7 @@ module StructuredCsv
 
           if row[1] && !row[1].empty?
             row[1].split(";").each do |opt|
-              k, v = opt.split("=")
+              k, v                = opt.split("=")
               data_meta[k.to_sym] = v
             end
           end
@@ -25,19 +25,19 @@ module StructuredCsv
           next
         end
 
-        if !first_row.nil? && is_row_empty?(row)
-          # warn "found last"
-          last_row = index
-          break
-        end
+        next unless !first_row.nil? && is_row_empty?(row)
+
+        # warn "found last"
+        last_row = index
+        break
       end
 
       # warn "first #{first_row}  last #{last_row}"
       {
         first_row: first_row,
-        last_row: last_row,
-        rows: csv[(first_row.nil? ? 0 : first_row)..last_row],
-        meta: data_meta,
+        last_row:  last_row,
+        rows:      csv[(first_row.nil? ? 0 : first_row)..last_row],
+        meta:      data_meta
       }
     end
 
@@ -69,7 +69,7 @@ module StructuredCsv
 
       {
         name: field_name,
-        type: field_type,
+        type: field_type
       }
     end
 
@@ -110,10 +110,10 @@ module StructuredCsv
         next if is_row_empty?(row)
 
         name_type = split_header_key_type(row.first)
-        key = name_type[:name]
-        type = name_type[:type]
+        key       = name_type[:name]
+        type      = name_type[:type]
 
-        value = cast_type(row[1], type)
+        value     = cast_type(row[1], type)
         hash[key] = value
       end
 
@@ -123,10 +123,10 @@ module StructuredCsv
     end
 
     def self.parse_data(rows, data_meta)
-      header = []
+      header    = []
       data_name = data_meta[:name]
       data_type = data_meta[:type] || "hash"
-      data_key = data_meta[:key]
+      data_key  = data_meta[:key]
 
       base_structure = case data_type
                        when "hash"
@@ -143,9 +143,7 @@ module StructuredCsv
             split_header_key_type(field) unless field.nil?
           end.compact
 
-          if data_type == "hash" && data_key.nil?
-            data_key = header.first
-          end
+          data_key = header.first if data_type == "hash" && data_key.nil?
 
           next
         end
@@ -163,8 +161,8 @@ module StructuredCsv
 
         row_values = []
         header.each_with_index do |h, i|
-          v = row[i]
-          v = v.strip unless v.nil?
+          v             = row[i]
+          v             = v.strip unless v.nil?
           row_values[i] = cast_type(v, h[:type])
         end
 
@@ -190,7 +188,7 @@ module StructuredCsv
 
       if data_name
         base_structure = {
-          data_name => base_structure,
+          data_name => base_structure
         }
       end
 
@@ -201,7 +199,7 @@ module StructuredCsv
       raw_data = StructuredCsv::Common.load_csv(csv_filename)
 
       metadata_section = get_portion(raw_data, "METADATA")
-      data_section = get_portion(raw_data, "DATA")
+      data_section     = get_portion(raw_data, "DATA")
 
       # warn '----------'
       # pp data_section[:rows]
@@ -209,7 +207,7 @@ module StructuredCsv
 
       {
         "metadata" => parse_metadata(metadata_section[:rows]),
-        "data" => parse_data(data_section[:rows], data_section[:meta]),
+        "data"     => parse_data(data_section[:rows], data_section[:meta])
       }
     end
 
@@ -224,12 +222,12 @@ module StructuredCsv
         # warn"k (#{k}) v (#{v})"
         key_components = k.to_s.split(".")
 
-        level = new_hash
+        level          = new_hash
         last_component = key_components.pop
         key_components.each do |component|
           # warn"c (#{component})"
           level[component] ||= {}
-          level = level[component]
+          level              = level[component]
         end
 
         level[last_component] = v
