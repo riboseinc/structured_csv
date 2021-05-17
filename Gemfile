@@ -6,6 +6,7 @@ source "https://rubygems.org"
 gemspec
 
 group :test do
+  gem "rubocop", "~> 1.14", require: false
   gem "rubocop-performance", require: false
   gem "rubocop-rails", require: false
 end

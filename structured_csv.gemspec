@@ -41,6 +41,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard-rspec", "~> 4.7"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rspec", "~> 3.10"
-  spec.add_development_dependency "rubocop", "~> 1.14.0"
   spec.add_development_dependency "simplecov", "~> 0.21"
 end
