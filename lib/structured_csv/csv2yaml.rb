@@ -36,7 +36,7 @@ module StructuredCsv
       {
         first_row: first_row,
         last_row: last_row,
-        rows: csv[first_row..last_row],
+        rows: csv[(first_row.nil? ? 0 : first_row)..last_row],
         meta: data_meta,
       }
     end
