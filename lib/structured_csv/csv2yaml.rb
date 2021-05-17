@@ -58,7 +58,7 @@ module StructuredCsv
       field_type = CAST_DEFAULT_TYPE
 
       # warn header_field
-      arr = header_field.match(/\A(.*)\[(.*)\]\Z/)
+      arr = header_field.match(/\A([^\[]*)\[(.*)\]\Z/)
 
       if arr.nil?
         field_name = header_field
