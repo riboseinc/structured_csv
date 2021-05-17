@@ -7,7 +7,7 @@ require:
 
 # local repo-specific modifications
 AllCops:
-  TargetRubyVersion: 2.4
+  TargetRubyVersion: 3.1
 
 Style/StringLiterals:
   Enabled: true
