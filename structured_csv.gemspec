@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   # guide at: https://bundler.io/guides/creating_gem.html
 
   spec.add_dependency "csv", "~> 3.1"
-  spec.add_dependency "pathname", "~> 0.1"
+  # spec.add_dependency "pathname", "~> 0.1"
   spec.add_dependency "yaml", "~> 0.1"
 
   spec.add_development_dependency "byebug", "~> 11.1"
