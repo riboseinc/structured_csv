@@ -15,6 +15,7 @@ class Gem::Specification
   end
 end
 
+require "structured_csv/common"
 require "structured_csv/csv2yaml"
 
 csvfile = ARGV.pop
@@ -24,7 +25,7 @@ outfile = csvfile.gsub(/csv$/, "yaml")
 
 IO.write(
   outfile,
-  StructuredCsv::CsvTo2Yaml.convert(csvfile).to_yaml,
+  StructuredCsv::Csv2Yaml.convert(csvfile).to_yaml,
 )
 
 # pp Csv2Yaml.convert(filename)

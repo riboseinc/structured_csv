@@ -15,6 +15,7 @@ class Gem::Specification
   end
 end
 
+require "structured_csv/common"
 require "structured_csv/csv_join"
 
 csvdir  = ARGV.pop
